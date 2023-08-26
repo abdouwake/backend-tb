@@ -16,5 +16,5 @@ public class Gameplay {
     private long id;
     private Boolean play;
     private String endDate;
-    private String endGame;
+    private Boolean endGame;
 }

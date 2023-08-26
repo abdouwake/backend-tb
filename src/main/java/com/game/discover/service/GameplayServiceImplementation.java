@@ -24,6 +24,7 @@ public class GameplayServiceImplementation implements GameplayService {
         Optional<Gameplay> gp = gamePlayRepository.findById(String.valueOf(1));
         gp.get().setPlay(gameplay.getPlay());
         gp.get().setEndDate(gameplay.getEndDate());
+        gp.get().setEndGame(gameplay.getEndGame());
         return gamePlayRepository.save(gp.get());
     }
 
