@@ -15,6 +15,7 @@ public class UserGame {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+    @Column(unique=true)
     private String email;
     private String role;
     private String password;
@@ -22,6 +23,7 @@ public class UserGame {
     private String completeName;
     @Column(length = 65555)
     private String picture;
+    @Column(length = 65555)
     private String funFact;
     private String qrCodeB64;
 }
