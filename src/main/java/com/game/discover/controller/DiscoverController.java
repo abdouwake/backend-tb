@@ -1,11 +1,9 @@
 package com.game.discover.controller;
 
-
 import com.game.discover.Exceptions.ApiRequestException;
 import com.game.discover.ResponseEntity.ResponseEntity;
 import com.game.discover.dto.UserDto;
 import com.game.discover.model.Discover;
-import com.game.discover.model.Gameplay;
 import com.game.discover.service.DiscoverService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

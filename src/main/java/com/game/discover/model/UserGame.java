@@ -22,6 +22,7 @@ public class UserGame {
     private String completeName;
     @Column(length = 65555)
     private String picture;
+    @Column(length = 65555)
     private String funFact;
     private String qrCodeB64;
 }

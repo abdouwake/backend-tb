@@ -26,22 +26,20 @@ public class TentativeServiceImplementation implements TentativeService {
         List<Tentative> tent =  tentativeRepository.findAll();
         List<AllTentativesDto> listTent =  new ArrayList<>();
 
-        tent.stream().forEach((item) -> {
-            UserGame u1 = userRepository.findById(String.valueOf(item.getIdUser1())).get();
-            UserGame u2 = userRepository.findById(String.valueOf(item.getIdUser2())).get();
-             listTent.add(new AllTentativesDto(item.getId(),u1.getCompleteName(),u2.getCompleteName(),item.getTrouve()));
-        });
-        Collections.sort(listTent, (left, right) -> Math.toIntExact(right.getId()-left.getId()));
+        if(!tent.isEmpty()){
+            tent.stream().forEach((item) -> {
+                UserGame u1 = userRepository.findById(String.valueOf(item.getIdUser1())).get();
+                UserGame u2 = userRepository.findById(String.valueOf(item.getIdUser2())).get();
+                listTent.add(new AllTentativesDto(item.getId(),u1.getCompleteName(),u2.getCompleteName(),item.getTrouve()));
+            });
+            Collections.sort(listTent, (left, right) -> Math.toIntExact(right.getId()-left.getId()));
+        }
 
         return listTent;
     }
 
     @Override
     public Tentative add(TentativeDto tentativeDto) {
-
-//        UserGame user1 =userRepository.findById(tentativeDto.getId1()).get();
-//        UserGame user2 =userRepository.findById(tentativeDto.getId2()).get();
-
         Tentative tentative = new Tentative(tentativeDto.getId1(), tentativeDto.getId2(),tentativeDto.getTrouve());
         return tentativeRepository.save(tentative);
     }

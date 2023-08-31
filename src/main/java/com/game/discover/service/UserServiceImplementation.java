@@ -59,17 +59,7 @@ public class UserServiceImplementation implements UserService {
     //Users with Discovered part
     @Override
     public List<UserDto> allUsersForUser(String id) {
-//        Optional<UserGame> user1 = userRepository.findById(id);
-//        List<UserGame> users = userRepository.findAll();
-//        List<Discoverie> foundUsers = discoveriesRepository.findByUser1(user1);
-//        List<Long> userIds = foundUsers.stream().map((elm)->elm.getUser1().getId()).toList();
         List<UserDto> userList = null;
-//        users.stream().map((user)-> {
-//            boolean discovered=false;
-//            if(userIds.contains(id)) discovered = true;
-//            userList.add(new UserDto(user.getId(),user.getEmail(),user.getCompleteName(),user.getPicture(),user.getFunFact(),user.getQrCodeB64(),discovered));
-//            return null;
-//        });
         return userList;
     }
 
