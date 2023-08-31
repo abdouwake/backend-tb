@@ -15,6 +15,7 @@ public class UserGame {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+    @Column(unique=true)
     private String email;
     private String role;
     private String password;
